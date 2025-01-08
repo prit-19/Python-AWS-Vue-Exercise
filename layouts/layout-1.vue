@@ -28,6 +28,15 @@
               </li>
             </ul>
             <div class="d-flex" role="search">
+              <div class="form-check form-switch mt-2">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                  v-model="isToggled"
+                />
+              </div>
               <button class="btn btn-outline-none" @click="logout">
                 Logout
               </button>
@@ -44,6 +53,18 @@
 const userStore = useUserStore();
 const userGroup = userStore?.user?.group;
 const router = useRouter();
+
+const isToggled = ref(false);
+
+watch(isToggled, (newVal, oldVal) => {
+  if (newVal) {
+    document.documentElement.classList.remove("light-mode");
+    document.documentElement.classList.add("dark-mode");
+  } else {
+    document.documentElement.classList.remove("dark-mode");
+    document.documentElement.classList.add("light-mode");
+  }
+});
 
 const logout = async () => {
   userStore.clearUser();

@@ -37,4 +37,9 @@ const runtimeConfig = useRuntimeConfig();
   box-sizing: border-box;
   margin: 0px;
 }
+
+.dark-mode body {
+  background-color: #091a28;
+  color: #ebf4f1;
+}
 </style>

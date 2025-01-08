@@ -42,6 +42,6 @@ export default defineNuxtConfig({
     "/": { prerender: true },
   },
 
-  modules: ["@pinia/nuxt", "pinia-plugin-persistedstate/nuxt"],
+  modules: ["@pinia/nuxt", "pinia-plugin-persistedstate/nuxt", "@nuxtjs/color-mode"],
   plugins: ["~/plugins/piniaPersist.ts", "~/plugins/axios.ts"],
 });
